@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="互联网如何运作电脑连入互联网， 电脑就会获得一个IP(internet  protocol address)地址。 服务器接入互联网， 也会获得一个IP地址， 我们常说的访问这个网站，其实就是访问这个网站的服务器的IP地址。 假如你的电脑想访问服务器，那么这个时候电脑就是客户端，服务器就是服务端， 这种形式也就是客户端服务端模型。 客户端想访问 index.html， 文本数据会转换成电子信号，通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="互联网如何运作">
+<meta property="og:url" content="http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/index.html">
+<meta property="og:site_name" content="王洪德的个人笔记">
+<meta property="og:description" content="互联网如何运作电脑连入互联网， 电脑就会获得一个IP(internet  protocol address)地址。 服务器接入互联网， 也会获得一个IP地址， 我们常说的访问这个网站，其实就是访问这个网站的服务器的IP地址。 假如你的电脑想访问服务器，那么这个时候电脑就是客户端，服务器就是服务端， 这种形式也就是客户端服务端模型。 客户端想访问 index.html， 文本数据会转换成电子信号，通">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-04T14:06:08.253Z">
+<meta property="article:modified_time" content="2021-04-04T14:06:08.253Z">
+<meta property="article:author" content="王洪德">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>互联网如何运作</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇 " href="/2021/04/04/CSS/01-Flex%E5%B8%83%E5%B1%80/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/2021/04/04/%E7%BD%91%E7%BB%9C/02-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&text=互联网如何运作"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&is_video=false&description=互联网如何运作"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=互联网如何运作&body=Check out this article: http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&name=互联网如何运作&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&t=互联网如何运作"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">互联网如何运作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%80%8E%E4%B9%88%E6%9E%84%E6%88%90%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">电脑和服务器之间的互联网怎么构成的</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        互联网如何运作
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">王洪德</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-04-04T14:06:08.253Z" itemprop="datePublished">2021-04-04</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/JS/" rel="tag">JS</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="互联网如何运作"><a href="#互联网如何运作" class="headerlink" title="互联网如何运作"></a>互联网如何运作</h3><p>电脑连入互联网， 电脑就会获得一个IP(internet  protocol address)地址。</p>
+<p>服务器接入互联网， 也会获得一个IP地址， 我们常说的访问这个网站，其实就是访问这个网站的服务器的IP地址。</p>
+<p>假如你的电脑想访问服务器，那么这个时候电脑就是客户端，服务器就是服务端， 这种形式也就是客户端服务端模型。</p>
+<p>客户端想访问 <code>index.html</code>， 文本数据会转换成电子信号，通过电缆发送给服务器，在服务器端，再将电子信号转换成计算机使用的文本数据 。</p>
+<p>那么到底如何传递呢， 就要通过 <code>TCP/IP协议族</code>，协议就是一种规则，用于指定计算机应该如何通过网络来相互通信。</p>
+<p><code>TCP/IP协议族</code>分为自顶向下的4层 ，网络协议通过分层，来实现每一层的职责。</p>
+<ol>
+<li>应用层 ： 提供特定于应用程序的协议， HTTP(浏览器和服务器相互通信)、FTP(文件传输)、IMAP(邮件客户端检索)</li>
+<li>TCP传输控制层：发送数据包到计算机特定端口号的应用程序</li>
+<li>IP网络层： 使用IP地址将数据包 发送到特定的计算机</li>
+<li>链路层： 将二进制数据包与网络信号相互转换</li>
+</ol>
+<p>我们想请求的 <code>index.html</code> 首先分解为许多片段，我们称之为数据包。然后经过应用层来到TCP传输层，将每一个数据包分配端口号，</p>
+<p>然后进入网络层，每个数据包将赋予目标计算机的IP地址，最后进入链路层，将数据包的文本信息转译成电子信号，通过电缆传输。</p>
+<p>在电缆的另一端的路由器，去检查每一个数据包的目标地址，并确定将其发送到何处，最终数据包到达指定的服务器后，数据包将从</p>
+<p><code>TCP/IP协议族</code>的底部开始向上运行，在数据通过<code>TCP/IP协议族</code>的过程时，数据包的路由数据(例如IP地址，端口号)都将剥离出去，</p>
+<p>当数据包到达协议族应用层时，数据已经恢复成原始文本数据，通过端口号找到对应应用程序，应用程序根据请求内容做出响应。</p>
+<p>比如刚才的<code>index.html</code>，服务器将数据，通过刚才客户端请求服务器的相同的方式，响应给客户端，这样就看到了首页内容，也就是完</p>
+<p>成了一次客户端与服务器在互联网中的数据交互。</p>
+<p>这里需要注意下：</p>
+<ol>
+<li>TCP是可靠的连接协议，在建立连接是需要进行三次握手，每个收到的数据包都会向发送方发送<code>ack确认</code>，以确保发送成功。</li>
+<li>IP是不可靠的无连接协议，他不关心数据包是否到达，也不关心端口和地址，只关心连接到目标IP地址。</li>
+<li>当数据包比较大，在网络层会进行分包处理，分包后到达时间不一样，TCP会根据数据包携带的序列号排序重组，如果发送方在特定时间没有接收到接收方发送的ack确认，会再次重新发送。</li>
+<li>IP 是一种协议，分为IPV4(2^32次方) 和 IPV6(2^128次方)，IP地址是一串数组 192.168.1.1</li>
+</ol>
+<h3 id="电脑和服务器之间的互联网怎么构成的"><a href="#电脑和服务器之间的互联网怎么构成的" class="headerlink" title="电脑和服务器之间的互联网怎么构成的"></a>电脑和服务器之间的互联网怎么构成的</h3><p>电脑通过调制解调器moden，也就是俗称的<code>猫</code>， 将数字电信号转换成可延电话线传播的模拟信号后，在公共电话网络进行传输，</p>
+<p>公共电话网络通过连接<code>ISP(internet server provider 互联网服务提供商，比如我们的电信、移动、联通)</code>来接入互联网，</p>
+<p>通过```ISP<code>将连接到</code>ISP<code>的主干网络也就是</code> NSP(network server provider)<code>, </code>ISP<code>可以从</code>NSP``批量购买带宽，为客户提供网络接入服务，</p>
+<p><code>NSP</code>通过网络访问点<code>NAP</code>相连接，来交换数据包流量，每个<code>NSP</code>必须至少连接三个<code>NAP</code>，<code>NSP</code>主干可以通过<code>NAP</code>链接到另一个<code>NSP</code>主干，</p>
+<p>当然互联网架构不会这么简单，这里只是一个简化 ，那互联网到底如何将数据包找到正确路线呢，互联网中有一个特殊的计算器<code>路由器</code> ,</p>
+<p><code>路由器</code>上有一个<code>路由表</code>，记录了子网络所有IP地址，但是他不知道上层网络所包含的IP地址，当数据到达路由器，路由器检查路由表是否</p>
+<p>有对应的IP地址，如果有则直接发送给对应的网络，没有则向上层传递数据包在更高层级的路由器查找IP地址，如果依然没找到，则接着</p>
+<p>向上层找，直到到达<code>NSP</code>主干网为止，连接到<code>NSP</code>主干网的路由器拥有最大的路由表，通过这张表可以将数据包发送到正确的骨干网，</p>
+<p>然后向下传播，直到找到目的地为止，电脑连接服务器就是这样一个过程。</p>
+<p>但是也有一个问题，我们是不可能记住IP地址的，并且IP地址也可能更换，所有就会有一个域名，那浏览器怎么通过域名知道访问哪个</p>
+<p>IP地址呢，就要依靠一个叫<code>DNS(domain names service)服务器</code>， 上面记录了IP地址和域名的对应关系，在浏览器输入网址，浏览器首先</p>
+<p>访问<code>DNS服务器</code>，获取到该域名的IP地址后 ，浏览器再访问该IP地址的服务器。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">互联网如何运作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%80%8E%E4%B9%88%E6%9E%84%E6%88%90%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">电脑和服务器之间的互联网怎么构成的</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&text=互联网如何运作"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&is_video=false&description=互联网如何运作"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=互联网如何运作&body=Check out this article: http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&title=互联网如何运作"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&name=互联网如何运作&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/04/04/%E7%BD%91%E7%BB%9C/01-%E4%BA%92%E8%81%94%E7%BD%91%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C/&t=互联网如何运作"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2021
+    王洪德
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
